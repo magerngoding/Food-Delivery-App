@@ -5,6 +5,12 @@ it means you have to rename it to something more unique.
 */
 export 'package:hyper_ui/module/dashboard/controller/dashboard_controller.dart';
 export 'package:hyper_ui/module/dashboard/view/dashboard_view.dart';
+export 'package:hyper_ui/module/dashboard1/controller/dashboard1_controller.dart';
+export 'package:hyper_ui/module/dashboard1/view/dashboard1_view.dart';
+export 'package:hyper_ui/module/dashboard2/controller/dashboard2_controller.dart';
+export 'package:hyper_ui/module/dashboard2/view/dashboard2_view.dart';
+export 'package:hyper_ui/module/dashboard3/controller/dashboard3_controller.dart';
+export 'package:hyper_ui/module/dashboard3/view/dashboard3_view.dart';
 export 'package:hyper_ui/module/favorite/controller/favorite_controller.dart';
 export 'package:hyper_ui/module/favorite/view/favorite_view.dart';
 export 'package:hyper_ui/module/main_navigation/controller/main_navigation_controller.dart';
@@ -25,6 +31,8 @@ export 'package:hyper_ui/module/widget_collection/dashboard_widget/controller/da
 export 'package:hyper_ui/module/widget_collection/dashboard_widget/view/dashboard_widget_view.dart';
 export 'package:hyper_ui/module/widget_collection/form_widget/controller/form_widget_controller.dart';
 export 'package:hyper_ui/module/widget_collection/form_widget/view/form_widget_view.dart';
+export 'package:hyper_ui/module/widget_collection/module_list_widget/controller/module_list_widget_controller.dart';
+export 'package:hyper_ui/module/widget_collection/module_list_widget/view/module_list_widget_view.dart';
 export 'package:hyper_ui/module/widget_collection/typography_widget/controller/typography_widget_controller.dart';
 export 'package:hyper_ui/module/widget_collection/typography_widget/view/typography_widget_view.dart';
 export 'package:hyper_ui/shared/theme/theme.dart';
@@ -73,6 +81,7 @@ export 'package:hyper_ui/shared/widget/form/switch/switch.dart';
 export 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
 export 'package:hyper_ui/shared/widget/form/time_picker/timepicker.dart';
 export 'package:hyper_ui/shared/widget/list/list_view.dart';
+export 'package:hyper_ui/shared/widget/typography/heading.dart';
 export 'core_package.dart';
 export 'state_util.dart';
 export 'setup.dart';

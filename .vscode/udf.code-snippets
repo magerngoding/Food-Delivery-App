@@ -1,0 +1,14 @@
+{
+  "h1": {
+    "prefix": "h1",
+    "body": "H3(title: 'Heading 3'),"
+  },
+  "h2": {
+    "prefix": "h2",
+    "body": "H2(title: 'Heading 2'),"
+  },
+  "h3": {
+    "prefix": "h3",
+    "body": "H4(title: 'Heading 3'),"
+  }
+}
