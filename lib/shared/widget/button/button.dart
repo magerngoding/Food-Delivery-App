@@ -7,12 +7,16 @@ class QBtutton extends StatelessWidget {
   final String label;
   final Function onPressed;
   final double? width;
+  final Color? color;
+  final IconData? icon;
 
   const QBtutton({
     Key? key,
     required this.label,
     required this.onPressed,
     this.width,
+    this.color,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -22,14 +26,25 @@ class QBtutton extends StatelessWidget {
       height: 48,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color(0xff22a45d),
+          backgroundColor: color ?? Color(0xff22a45d),
         ),
         onPressed: () => onPressed(),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 20,
-          ),
+        child: Row(
+          children: [
+            if (icon != null)
+              Icon(
+                icon,
+                size: 24.0,
+              ),
+            Spacer(),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            Spacer(),
+          ],
         ),
       ),
     );

@@ -11,6 +11,9 @@
         "widget_collection/module_list_widget",
         "dashboard1",
         "dashboard2",
-        "dashboard3"
+        "dashboard3",
+        "Intro",
+        "Login",
+        "ForgotPassword"
     ]
 }
