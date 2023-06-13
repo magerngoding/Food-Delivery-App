@@ -1,10 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, invalid_use_of_protected_member, unused_local_variable
 import 'package:flutter/material.dart';
 
 import 'package:hyper_ui/core.dart';
-
-import '../widget/card_category.dart';
-import '../widget/card_vertical_category.dart';
 
 class Dashboard1View extends StatefulWidget {
   Dashboard1View({

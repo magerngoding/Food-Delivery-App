@@ -20,22 +20,6 @@ class DashboardWidgetController extends State<DashboardWidgetView>
 
   List menuList = [
     {
-      "label": "IntroView",
-      "view": IntroView(),
-    },
-    {
-      "label": "LoginView",
-      "view": LoginView(),
-    },
-    {
-      "label": "ForgotPasswordView",
-      "view": ForgotPasswordView(),
-    },
-    {
-      "label": "Dashboard1",
-      "view": Dashboard1View(),
-    },
-    {
       "label": "ModuleList",
       "view": ModuleListWidgetView(),
     },

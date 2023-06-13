@@ -41,7 +41,7 @@ class DashboardWidgetView extends StatefulWidget {
                   Text(
                     item['label'],
                     style: TextStyle(
-                      fontSize: 24.0,
+                      fontSize: 20.0,
                     ),
                   ),
                 ],

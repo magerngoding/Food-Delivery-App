@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/state_util.dart';
-import '../view/Intro_view.dart';
+import '../view/intro_view.dart';
 
 class IntroController extends State<IntroView> implements MvcController {
   static late IntroController instance;

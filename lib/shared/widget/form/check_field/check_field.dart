@@ -1,3 +1,4 @@
+// ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
 
@@ -62,8 +63,6 @@ class _QCheckFieldState extends State<QCheckField> {
   Widget build(BuildContext context) {
     return FormField(
       initialValue: false,
-      
-      
       validator: (value) => widget.validator!(items),
       enabled: true,
       builder: (FormFieldState<bool> field) {
@@ -106,4 +105,3 @@ class _QCheckFieldState extends State<QCheckField> {
     );
   }
 }
-
