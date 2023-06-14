@@ -1,15 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class CardCategory extends StatelessWidget {
+class ProductCard extends StatelessWidget {
   final String image;
   final String title;
   final String location;
-  final String rating;
+  final double rating;
   final String time;
   final String delivery;
+  final EdgeInsetsGeometry? margin;
 
-  const CardCategory({
+  const ProductCard({
     Key? key,
     required this.image,
     required this.title,
@@ -17,16 +18,15 @@ class CardCategory extends StatelessWidget {
     required this.rating,
     required this.time,
     required this.delivery,
+    this.margin,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        left: 14.0,
-      ),
       height: 254.0,
       width: 200,
+      margin: margin,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(
@@ -93,7 +93,7 @@ class CardCategory extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    rating,
+                    '${rating}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12.0,

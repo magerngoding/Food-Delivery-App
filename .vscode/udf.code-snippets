@@ -1,4 +1,12 @@
 {
+  "q_product_card": {
+    "prefix": "q_product_card",
+    "body": "ProductCard(\nimage:\n'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',\ntitle: 'Pancake',\nlocation: 'Bogor',\nrating: 4.5,\ntime: '15',\ndelivery: 'Free',\n),"
+  },
+  "q_promotion_card": {
+    "prefix": "q_promotion_card",
+    "body": "ProductVerticalCard(\nimages: [\n\"https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80\",\n],\ntitle: 'Pizza',\ncategories: [\n'Masakan Nusantara',\n'Padang',\n'Sumatskut',\n],\nratingCount: 300,\ndelivery: 'Free',\nrating: 4.6,\ntime: '15 Min',\n),\n//END\n\nDivider(),\nPromotionCard(\ntitle: 'Free Delivery',\nsubTitle:\nr\"You've order at least \\$10 for using free delivery for 1 month.\",\n),"
+  },
   "q_carousel": {
     "prefix": "q_carousel",
     "body": "QCarouselSlider(\nimages: [\n\"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80\",\n\"https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80\",\n\"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80\",\n],\nheight: 160,\n),"
@@ -26,5 +34,9 @@
   "h4": {
     "prefix": "h4",
     "body": "H4(title: 'Heading 3'),"
+  },
+  "q_location_text": {
+    "prefix": "q_location_text",
+    "body": "QLocationText(\ntitle: 'Delivery',\nonPressed: () {\nGet.back();\n},\n),"
   }
 }

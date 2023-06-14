@@ -10,6 +10,7 @@
         "widget_collection/color_widget",
         "widget_collection/module_list_widget",
         "widget_collection/carousel_widget",
+        "widget_collection/uncategoriezed_widget",
         "dashboard1",
         "dashboard2",
         "dashboard3",
@@ -45,6 +46,6 @@
         "card_list1",
         "locations1",
         "add_social_accounts1",
-        "refer_to_friends1"       
+        "refer_to_friends1"
     ]
 }

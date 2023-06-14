@@ -47,5 +47,9 @@ class DashboardWidgetController extends State<DashboardWidgetView>
       "label": "Button",
       "view": ButtonWidgetView(),
     },
+    {
+      "label": "Uncategorized widget",
+      "view": UncategoriezedWidgetView(),
+    },
   ];
 }

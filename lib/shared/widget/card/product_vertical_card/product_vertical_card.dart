@@ -1,31 +1,34 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:hyper_ui/core.dart';
 
 // ignore: must_be_immutable
-class CardVerticalCategory extends StatelessWidget {
-  String image;
-  String title;
-  String category;
-  String rating;
-  String countRating;
-  String time;
-  String delivery;
+class ProductVerticalCard extends StatelessWidget {
+  final List<String> images;
+  final String title;
+  final List<String> categories;
+  final double rating;
+  final int ratingCount;
+  final String time;
+  final String delivery;
+  final EdgeInsetsGeometry? margin;
 
-  CardVerticalCategory({
+  ProductVerticalCard({
     Key? key,
-    required this.image,
+    required this.images,
     required this.title,
-    required this.category,
+    required this.categories,
     required this.rating,
-    required this.countRating,
+    required this.ratingCount,
     required this.time,
     required this.delivery,
+    this.margin,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 282.0,
+      margin: margin,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(
@@ -37,24 +40,33 @@ class CardVerticalCategory extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 185.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  16.0,
+          if (images.length == 1)
+            Container(
+              height: 160.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(
+                    16.0,
+                  ),
                 ),
-              ),
-              image: DecorationImage(
-                image: NetworkImage(
-                  image,
+                image: DecorationImage(
+                  image: NetworkImage(
+                    images.first,
+                  ),
+                  fit: BoxFit.cover,
                 ),
-                fit: BoxFit.cover,
               ),
             ),
-          ),
+          if (images.length > 1)
+            QCarouselBottomRightSlider(
+              images: images,
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+              height: 160,
+            ),
           const SizedBox(
-            height: 16.0,
+            height: 12.0,
           ),
           Text(
             title,
@@ -66,10 +78,26 @@ class CardVerticalCategory extends StatelessWidget {
           const SizedBox(
             height: 4.0,
           ),
-          Text(
-            "\$\$ ${category}",
-            style: TextStyle(
-              fontSize: 16.0,
+          SingleChildScrollView(
+            controller: ScrollController(),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(categories.length, (index) {
+                var category = categories[index];
+                return Row(
+                  children: [
+                    if (index > 0) DotCenter(),
+                    Text(
+                      "${category}",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ],
+                );
+              }),
             ),
           ),
           const SizedBox(
@@ -79,7 +107,7 @@ class CardVerticalCategory extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                rating,
+                '${rating}',
                 style: TextStyle(
                   fontSize: 12.0,
                   fontWeight: FontWeight.w500,
@@ -97,7 +125,7 @@ class CardVerticalCategory extends StatelessWidget {
                 width: 9.0,
               ),
               Text(
-                '${countRating} +Ratings',
+                '${ratingCount} +Ratings',
                 style: TextStyle(
                   fontSize: 12.0,
                   fontWeight: FontWeight.w500,

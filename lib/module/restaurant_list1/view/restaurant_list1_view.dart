@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:hyper_ui/core.dart';
 
-import '../controller/restaurant_list1_controller.dart';
-
 class RestaurantList1View extends StatefulWidget {
   const RestaurantList1View({Key? key}) : super(key: key);
 
@@ -15,6 +13,7 @@ class RestaurantList1View extends StatefulWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("RestaurantList1"),
+        centerTitle: true,
         actions: const [],
       ),
       body: ListView.separated(
@@ -23,14 +22,21 @@ class RestaurantList1View extends StatefulWidget {
         shrinkWrap: true,
         physics: const ScrollPhysics(),
         separatorBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 4.0,
+          return SizedBox(
+            height: 20.0,
           );
         },
         itemBuilder: (BuildContext context, int index) {
+          //Buat ambil data dari dummyData
           final item = controller.restaurantList[index];
-          return Column(
-            children: [],
+          return ProductVerticalCard(
+            images: item.images,
+            title: 'Nasi Bebek',
+            categories: item.categories,
+            rating: item.rating,
+            ratingCount: item.ratingCount,
+            time: '30Min',
+            delivery: 'Free',
           );
         },
       ),
