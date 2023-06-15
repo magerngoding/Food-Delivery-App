@@ -151,7 +151,9 @@ class Dashboard1View extends StatefulWidget {
                   var item = {};
                   return ProductVerticalCard(
                     images: [
+                      "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
                       "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+                      "https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=428&q=80",
                     ],
                     title: 'Pizza',
                     categories: [
@@ -162,6 +164,9 @@ class Dashboard1View extends StatefulWidget {
                     delivery: 'Free',
                     rating: 4.6,
                     time: '15 Min',
+                    margin: const EdgeInsets.only(
+                      bottom: 20.0,
+                    ),
                   );
                 },
               ),

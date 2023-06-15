@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:hyper_ui/core.dart';
 
 class ProductCard extends StatelessWidget {
   final String image;
@@ -24,7 +25,6 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 254.0,
       width: 200,
       margin: margin,
       decoration: const BoxDecoration(
@@ -78,7 +78,6 @@ class ProductCard extends StatelessWidget {
             height: 10.0,
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 height: 20.0,
@@ -115,6 +114,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(
                 width: 12.0,
               ),
+              DotCenter(),
               Text(
                 delivery,
                 style: TextStyle(

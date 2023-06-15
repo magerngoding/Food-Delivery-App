@@ -1,7 +1,11 @@
 {
   "q_product_card": {
     "prefix": "q_product_card",
-    "body": "ProductCard(\nimage:\n'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',\ntitle: 'Pancake',\nlocation: 'Bogor',\nrating: 4.5,\ntime: '15',\ndelivery: 'Free',\n),"
+    "body": "ProductCard(\nimage:\n'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',\ntitle: 'Pancake',\nlocation: 'Bogor',\nrating: 4.5,\ntime: '25Min',\ndelivery: 'Free',\n),"
+  },
+  "q_product_rating_card": {
+    "prefix": "q_product_rating_card",
+    "body": "ProductRatingCard(\nimage:\n'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',\ntitle: 'Pancake',\ncategories: [\n'Chinese',\n'Traditional',\n],\nrating: 4.5,\ntime: '15Min',\ndelivery: 'Free',\n),"
   },
   "q_promotion_card": {
     "prefix": "q_promotion_card",

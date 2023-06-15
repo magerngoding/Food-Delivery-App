@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/shared/widget/card/product_rating_card/product_rating_card.dart';
 
 class CardWidgetView extends StatefulWidget {
   const CardWidgetView({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class CardWidgetView extends StatefulWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //#TEMPLATE q_product_card
               ProductCard(
@@ -24,13 +26,32 @@ class CardWidgetView extends StatefulWidget {
                 title: 'Pancake',
                 location: 'Bogor',
                 rating: 4.5,
-                time: '15',
+                time: '25Min',
                 delivery: 'Free',
               ),
               //#END
               const SizedBox(
                 height: 20.0,
               ),
+
+              //#TEMPLATE q_product_rating_card
+              ProductRatingCard(
+                image:
+                    'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',
+                title: 'Pancake',
+                categories: [
+                  'Chinese',
+                  'Traditional',
+                ],
+                rating: 4.5,
+                time: '15Min',
+                delivery: 'Free',
+              ),
+              //#END
+              const SizedBox(
+                height: 20.0,
+              ),
+
               //#TEMPLATE q_product_vertical_card
               ProductVerticalCard(
                 images: [
