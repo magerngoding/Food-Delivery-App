@@ -165,7 +165,7 @@ class ProductRatingCard extends StatelessWidget {
                     children: [
                       if (index > 0) DotCenter(),
                       Text(
-                        "${category}",
+                        "${category} ",
                         style: TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.w400,
