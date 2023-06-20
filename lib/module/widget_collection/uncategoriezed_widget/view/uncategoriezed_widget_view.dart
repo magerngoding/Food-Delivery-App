@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/widget/uncategorized/location_text.dart';
+import 'package:hyper_ui/shared/widget/uncategorized/q_location_text_header/q_location_text_header.dart';
 
 class UncategoriezedWidgetView extends StatefulWidget {
   const UncategoriezedWidgetView({Key? key}) : super(key: key);
@@ -26,6 +27,8 @@ class UncategoriezedWidgetView extends StatefulWidget {
                 },
               ),
               //#END
+
+              QLocationHeaderText(),
             ],
           ),
         ),

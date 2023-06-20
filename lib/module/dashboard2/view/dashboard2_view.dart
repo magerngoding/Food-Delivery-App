@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/shared/widget/uncategorized/q_location_text_header/q_location_text_header.dart';
 import '../../../shared/widget/card/product_rating_card/product_rating_card.dart';
-import '../../../shared/widget/uncategorized/location_text.dart';
 
 class Dashboard2View extends StatefulWidget {
   const Dashboard2View({Key? key}) : super(key: key);
@@ -14,26 +14,7 @@ class Dashboard2View extends StatefulWidget {
       appBar: AppBar(
         leading: Container(),
         leadingWidth: 0,
-        title: Stack(
-          children: [
-            Row(
-              children: [
-                Spacer(),
-                QLocationText(
-                  title: 'Delivery to',
-                  onPressed: () {
-                    Get.back();
-                  },
-                ),
-                Spacer(),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text("Filter"),
-                ),
-              ],
-            ),
-          ],
-        ),
+        title: QLocationHeaderText(),
         actions: [],
       ),
       body: SingleChildScrollView(
