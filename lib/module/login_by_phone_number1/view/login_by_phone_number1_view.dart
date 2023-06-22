@@ -25,5 +25,6 @@ class LoginByPhoneNumber1View extends StatefulWidget {
   }
 
   @override
-  State<LoginByPhoneNumber1View> createState() => LoginByPhoneNumber1Controller();
+  State<LoginByPhoneNumber1View> createState() =>
+      LoginByPhoneNumber1Controller();
 }

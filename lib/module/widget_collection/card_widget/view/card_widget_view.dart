@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/card/product_rating_card/product_rating_card.dart';
 
 class CardWidgetView extends StatefulWidget {
   const CardWidgetView({Key? key}) : super(key: key);
@@ -68,7 +67,7 @@ class CardWidgetView extends StatefulWidget {
                 rating: 4.6,
                 time: '15 Min',
               ),
-              //END
+              //#END
 
               Divider(),
               //#TEMPLATE q_promotion_card

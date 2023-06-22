@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hyper_ui/state_util.dart';
 import '../view/product_detail1_view.dart';
 
-class ProductDetail1Controller extends State<ProductDetail1View> implements MvcController {
+class ProductDetail1Controller extends State<ProductDetail1View>
+    implements MvcController {
   static late ProductDetail1Controller instance;
   late ProductDetail1View view;
 

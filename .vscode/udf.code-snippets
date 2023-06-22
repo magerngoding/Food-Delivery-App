@@ -7,9 +7,13 @@
     "prefix": "q_product_rating_card",
     "body": "ProductRatingCard(\nimage:\n'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',\ntitle: 'Pancake',\ncategories: [\n'Chinese',\n'Traditional',\n],\nrating: 4.5,\ntime: '15Min',\ndelivery: 'Free',\n),"
   },
+  "q_product_vertical_card": {
+    "prefix": "q_product_vertical_card",
+    "body": "ProductVerticalCard(\nimages: [\n\"https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80\",\n],\ntitle: 'Pizza',\ncategories: [\n'Masakan Nusantara',\n'Padang',\n'Sumatskut',\n],\nratingCount: 300,\ndelivery: 'Free',\nrating: 4.6,\ntime: '15 Min',\n),"
+  },
   "q_promotion_card": {
     "prefix": "q_promotion_card",
-    "body": "ProductVerticalCard(\nimages: [\n\"https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80\",\n],\ntitle: 'Pizza',\ncategories: [\n'Masakan Nusantara',\n'Padang',\n'Sumatskut',\n],\nratingCount: 300,\ndelivery: 'Free',\nrating: 4.6,\ntime: '15 Min',\n),\n//END\n\nDivider(),\nPromotionCard(\ntitle: 'Free Delivery',\nsubTitle:\nr\"You've order at least \\$10 for using free delivery for 1 month.\",\n),"
+    "body": "PromotionCard(\ntitle: 'Free Delivery',\nsubTitle:\nr\"You've order at least \\$10 for using free delivery for 1 month.\",\n),"
   },
   "q_carousel": {
     "prefix": "q_carousel",

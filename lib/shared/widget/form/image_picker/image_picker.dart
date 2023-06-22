@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
@@ -218,8 +217,6 @@ class _QImagePickerState extends State<QImagePicker> {
                 builder: (FormFieldState<bool> field) {
                   return TextFormField(
                     controller: controller,
-                    
-
                     obscureText: widget.obscure,
                     readOnly: true,
                     decoration: InputDecoration(
@@ -265,4 +262,3 @@ class _QImagePickerState extends State<QImagePicker> {
     );
   }
 }
-

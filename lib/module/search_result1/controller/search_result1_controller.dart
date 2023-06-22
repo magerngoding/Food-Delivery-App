@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hyper_ui/state_util.dart';
 import '../view/search_result1_view.dart';
 
-class SearchResult1Controller extends State<SearchResult1View> implements MvcController {
+class SearchResult1Controller extends State<SearchResult1View>
+    implements MvcController {
   static late SearchResult1Controller instance;
   late SearchResult1View view;
 

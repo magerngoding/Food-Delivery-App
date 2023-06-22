@@ -84,9 +84,6 @@ class _QAutoCompleteState extends State<QAutoComplete> {
                   ),
                 );
               },
-              
-              
-              
               onSelected: (Map map) {
                 String? label = map["label"];
                 dynamic value = map["value"];

@@ -25,5 +25,6 @@ class ConfirmPhoneNumber1View extends StatefulWidget {
   }
 
   @override
-  State<ConfirmPhoneNumber1View> createState() => ConfirmPhoneNumber1Controller();
+  State<ConfirmPhoneNumber1View> createState() =>
+      ConfirmPhoneNumber1Controller();
 }

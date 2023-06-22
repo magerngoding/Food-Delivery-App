@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hyper_ui/state_util.dart';
 import '../view/change_password1_view.dart';
 
-class ChangePassword1Controller extends State<ChangePassword1View> implements MvcController {
+class ChangePassword1Controller extends State<ChangePassword1View>
+    implements MvcController {
   static late ChangePassword1Controller instance;
   late ChangePassword1View view;
 
