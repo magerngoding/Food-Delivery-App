@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../../../../shared/widget/typography/heading.dart';
-import '../controller/typography_widget_controller.dart';
+import 'package:hyper_ui/shared/widget/typography/category_list.dart';
 
 class TypographyWidgetView extends StatefulWidget {
   const TypographyWidgetView({Key? key}) : super(key: key);
@@ -35,6 +34,17 @@ class TypographyWidgetView extends StatefulWidget {
               //#END
               //#TEMPLATE h4
               H4(title: 'Heading 3'),
+              //#END
+
+              Divider(),
+              //#TEMPLATE q_category_list
+              QCategory_list(
+                items: [
+                  'Masakan Nusantara',
+                  'Padang',
+                  'Bekasi',
+                ],
+              ),
               //#END
             ],
           ),
