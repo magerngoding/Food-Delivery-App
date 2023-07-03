@@ -7,6 +7,7 @@ class QRadioFieldWithHeader extends StatefulWidget {
   final String? Function(List<Map<String, dynamic>> item)? validator;
   final Function(dynamic value, String? label) onChanged;
   final String? value;
+  final bool? primary;
 
   const QRadioFieldWithHeader({
     Key? key,
@@ -16,6 +17,7 @@ class QRadioFieldWithHeader extends StatefulWidget {
     this.hint,
     this.value,
     required this.onChanged,
+    this.primary = true,
   }) : super(key: key);
 
   @override
@@ -92,6 +94,7 @@ class _QRadioFieldWithHeaderState extends State<QRadioFieldWithHeader> {
                 focusedErrorBorder: InputBorder.none,
               ),
               child: ListView.builder(
+                primary: widget.primary,
                 shrinkWrap: true,
                 itemCount: items.length,
                 itemBuilder: (context, index) {

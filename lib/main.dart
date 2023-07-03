@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
       valueListenable: Get.mainTheme,
       builder: (context, value, child) {
         return MaterialApp(
-          title: 'Capek Ngoding',
+          title: '',
           navigatorKey: Get.navigatorKey,
           debugShowCheckedModeBanner: false,
           theme: getDefaultTheme(),
