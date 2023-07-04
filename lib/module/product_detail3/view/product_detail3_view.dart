@@ -83,6 +83,7 @@ class ProductDetail3View extends StatefulWidget {
                       label: "Cookie of top Cookie",
                       validator: Validator.atLeastOneitem,
                       primary: false,
+                      radioListPadding: EdgeInsets.zero,
                       items: [
                         {
                           "label": "Chocolate Chip",
@@ -111,6 +112,8 @@ class ProductDetail3View extends StatefulWidget {
                       label: "Choice of Bottom Cookie",
                       validator: Validator.atLeastOneitem,
                       primary: false,
+                      padding: EdgeInsets.zero,
+                      radioListPadding: EdgeInsets.zero,
                       items: [
                         {
                           "label": "Chocolate Chip",
@@ -135,6 +138,9 @@ class ProductDetail3View extends StatefulWidget {
                       ],
                       onChanged: (value, label) {},
                     ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
                     ListTile(
                       onTap: () {},
                       title: Text('Add Special Instructions'),
@@ -155,7 +161,7 @@ class ProductDetail3View extends StatefulWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               QActionBtutton(
-                label: 'Checkout',
+                label: 'ADD TO ORDER (\$11.98)',
                 onPressed: () {},
               ),
             ],

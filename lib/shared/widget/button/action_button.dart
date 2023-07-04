@@ -30,7 +30,7 @@ class QActionBtutton extends StatelessWidget {
         child: Text(
           label,
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 16,
           ),
         ),
       ),
