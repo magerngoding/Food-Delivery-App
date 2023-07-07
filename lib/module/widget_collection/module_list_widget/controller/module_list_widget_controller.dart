@@ -32,6 +32,10 @@ class ModuleListWidgetController extends State<ModuleListWidgetView>
       "view": Register1View(),
     },
     {
+      "label": "Reset email",
+      "view": ResetEmail1View(),
+    },
+    {
       "label": "ForgotPasswordView",
       "view": ForgotPasswordView(),
     },
