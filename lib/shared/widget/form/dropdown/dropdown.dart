@@ -91,6 +91,7 @@ class _QDropdownFieldState extends State<QDropdownField> {
       builder: (FormFieldState<bool> field) {
         return InputDecorator(
           decoration: InputDecoration(
+            border: OutlineInputBorder(),
             labelText: widget.label,
             errorText: field.errorText,
             helperText: widget.hint,

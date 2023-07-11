@@ -71,10 +71,9 @@ class _QTextFieldState extends State<QTextField> {
       maxLength: widget.maxLength,
       obscureText: widget.obscure,
       decoration: InputDecoration(
+        border: OutlineInputBorder(),
         labelText: widget.label,
-        suffixIcon: Icon(
-          widget.suffixIcon ?? Icons.text_format,
-        ),
+        suffix: widget.suffixIcon != null ? Icon(widget.suffixIcon) : null,
         helperText: widget.hint,
       ),
       onChanged: (value) {

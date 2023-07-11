@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -8,6 +9,7 @@ class QNumberField extends StatefulWidget {
   final String? Function(String?)? validator;
   final Function(String) onChanged;
   final Function(String)? onSubmitted;
+  final IconData? sufficIcon;
 
   final String? pattern;
   final String? locale;
@@ -16,10 +18,11 @@ class QNumberField extends StatefulWidget {
     Key? key,
     required this.label,
     this.value,
-    this.validator,
     this.hint,
+    this.validator,
     required this.onChanged,
     this.onSubmitted,
+    this.sufficIcon,
     this.pattern,
     this.locale = "en_US",
   }) : super(key: key);
@@ -60,10 +63,9 @@ class _QNumberFieldState extends State<QNumberField> {
       maxLength: 20,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
+        border: OutlineInputBorder(),
         labelText: widget.label,
-        suffixIcon: const Icon(
-          Icons.numbers,
-        ),
+        suffix: widget.sufficIcon != null ? Icon(widget.sufficIcon) : null,
         helperText: widget.hint,
       ),
       onChanged: (newValue) {
