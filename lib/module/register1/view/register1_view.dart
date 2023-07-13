@@ -85,7 +85,7 @@ class Register1View extends StatefulWidget {
                     child: Text(
                       "By signing up you agree to our Terms\nCondition & Privacy Policy",
                       style: TextStyle(
-                        fontSize: 12.0,
+                        fontSize: 14.0,
                         color: Colors.grey[700],
                       ),
                       textAlign: TextAlign.center,
