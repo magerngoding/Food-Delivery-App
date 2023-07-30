@@ -36,6 +36,10 @@ class ModuleListWidgetController extends State<ModuleListWidgetView>
       "view": ResetEmail1View(),
     },
     {
+      "label": "Enter Address",
+      "view": EnterAddress1View(),
+    },
+    {
       "label": "ConfirmPhoneNumber1View",
       "view": ConfirmPhoneNumber1View(),
     },

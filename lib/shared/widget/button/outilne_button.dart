@@ -7,26 +7,28 @@ class QOutlineBtutton extends StatelessWidget {
   final String label;
   final Function onPressed;
   final double? width;
+  final Color? color;
 
   const QOutlineBtutton({
     Key? key,
     required this.label,
     required this.onPressed,
     this.width,
+    this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width ?? MediaQuery.of(context).size.width,
-      height: 48,
+      height: 42,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
           foregroundColor: Color(
             0xff22a45d,
           ),
           side: BorderSide(
-            color: Color(0xffd9dbd9),
+            color: color ?? Color(0xffd9dbd9),
           ),
         ),
         onPressed: () => onPressed(),

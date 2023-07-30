@@ -74,7 +74,9 @@ class _QTextFieldState extends State<QTextField> {
         border: OutlineInputBorder(),
         labelText: widget.label,
         suffix: widget.suffixIcon != null ? Icon(widget.suffixIcon) : null,
+        prefix: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
         helperText: widget.hint,
+        isCollapsed: false,
       ),
       onChanged: (value) {
         widget.onChanged(value);
