@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class DotCenter extends StatelessWidget {
-  const DotCenter({Key? key}) : super(key: key);
+class DotContainer extends StatelessWidget {
+  const DotContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

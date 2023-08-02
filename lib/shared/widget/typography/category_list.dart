@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../shape/dot_center.dart';
+import '../shape/dot_container.dart';
 
 class QCategory_list extends StatelessWidget {
   final List<String> items;
@@ -25,7 +25,7 @@ class QCategory_list extends StatelessWidget {
             var category = items[index];
             return Row(
               children: [
-                if (index > 0) DotCenter(),
+                if (index > 0) DotContainer(),
                 Text(
                   "${category}",
                   style: TextStyle(

@@ -160,7 +160,7 @@ class CardSearching extends StatelessWidget {
                   fontSize: 14.0,
                 ),
               ),
-              DotCenter(),
+              DotContainer(),
               Text(
                 category,
                 style: TextStyle(

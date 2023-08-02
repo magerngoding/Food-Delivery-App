@@ -86,7 +86,7 @@ class ProductVerticalCard extends StatelessWidget {
                 var category = categories[index];
                 return Row(
                   children: [
-                    if (index > 0) DotCenter(),
+                    if (index > 0) DotContainer(),
                     Text(
                       "${category}",
                       style: TextStyle(

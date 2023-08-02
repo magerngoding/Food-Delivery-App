@@ -114,7 +114,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(
                 width: 12.0,
               ),
-              DotCenter(),
+              DotContainer(),
               Text(
                 delivery,
                 style: TextStyle(
