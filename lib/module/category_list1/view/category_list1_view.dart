@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/category_list1/data/category_list_data.dart';
 import '../controller/category_list1_controller.dart';
 
 class CategoryList1View extends StatefulWidget {
@@ -9,15 +10,93 @@ class CategoryList1View extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("CategoryList1"),
-        actions: const [],
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: const [],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 8.0,
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.search,
+                      size: 24.0,
+                    ),
+                    const SizedBox(
+                      width: 23.0,
+                    ),
+                    Text(
+                      "Search",
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 42.0,
+                ),
+                Text(
+                  "Top Categories",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                GridView.builder(
+                  padding: EdgeInsets.zero,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 1.0,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 6,
+                    crossAxisSpacing: 6,
+                  ),
+                  itemCount: CategoryData.categoryDataList.length,
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    var item = CategoryData.categoryDataList[index];
+                    return Stack(
+                      children: [
+                        Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: ColorFiltered(
+                              colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.5),
+                                BlendMode.darken,
+                              ),
+                              child: Image.network(
+                                item['image'],
+                                width: 160.0,
+                                height: 160.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Center(
+                          child: Text(
+                            item['title'],
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
