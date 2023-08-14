@@ -20,6 +20,9 @@ class CategoryList1View extends StatefulWidget {
                 const SizedBox(
                   height: 8.0,
                 ),
+                const SizedBox(
+                  width: 9.0,
+                ),
                 Row(
                   children: [
                     const Icon(
@@ -55,43 +58,47 @@ class CategoryList1View extends StatefulWidget {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     childAspectRatio: 1.0,
                     crossAxisCount: 2,
-                    mainAxisSpacing: 6,
-                    crossAxisSpacing: 6,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 15,
                   ),
                   itemCount: CategoryData.categoryDataList.length,
                   shrinkWrap: true,
                   physics: ScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     var item = CategoryData.categoryDataList[index];
-                    return Stack(
-                      children: [
-                        Container(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: ColorFiltered(
-                              colorFilter: ColorFilter.mode(
-                                Colors.black.withOpacity(0.5),
-                                BlendMode.darken,
-                              ),
-                              child: Image.network(
-                                item['image'],
-                                width: 160.0,
-                                height: 160.0,
-                                fit: BoxFit.cover,
+                    return LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            Container(
+                              width: constraints.maxWidth,
+                              height: constraints.maxHeight,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    Colors.black.withOpacity(0.5),
+                                    BlendMode.darken,
+                                  ),
+                                  child: Image.network(
+                                    item['image'],
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        Center(
-                          child: Text(
-                            item['title'],
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              color: Colors.white,
+                            Center(
+                              child: Text(
+                                item['title'],
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ],
+                          ],
+                        );
+                      },
                     );
                   },
                 ),
