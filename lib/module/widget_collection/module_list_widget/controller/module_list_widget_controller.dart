@@ -92,8 +92,8 @@ class ModuleListWidgetController extends State<ModuleListWidgetView>
       "view": OrderDetail1View(),
     },
     {
-      "label": "AddPaymentMethod1View",
-      "view": AddPaymentMethod1View(),
+      "label": "PaymentMethod1View",
+      "view": PaymentMethod1View(),
     },
     {
       "label": "Filter1View",
