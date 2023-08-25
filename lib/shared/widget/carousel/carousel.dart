@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -7,7 +6,6 @@ import 'package:flutter/material.dart';
 class QCarouselSlider extends StatefulWidget {
   final List images;
   final double height;
-
   const QCarouselSlider({
     Key? key,
     required this.images,
@@ -21,6 +19,7 @@ class QCarouselSlider extends StatefulWidget {
 class _QCarouselSliderState extends State<QCarouselSlider> {
   int currentIndex = 0;
   final CarouselController carouselController = CarouselController();
+
   @override
   Widget build(BuildContext context) {
     return Builder(builder: (context) {
@@ -31,7 +30,7 @@ class _QCarouselSliderState extends State<QCarouselSlider> {
             options: CarouselOptions(
               height: widget.height,
               autoPlay: true,
-              enlargeCenterPage: true,
+              enlargeCenterPage: false,
               onPageChanged: (index, reason) {
                 currentIndex = index;
                 setState(() {});
@@ -72,18 +71,17 @@ class _QCarouselSliderState extends State<QCarouselSlider> {
                   width: 12.0,
                   height: 6.0,
                   margin: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 4.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(12.0),
-                    ),
-                    color: (Theme.of(context).brightness == Brightness.dark
-                            ? Colors.grey
-                            : Colors.grey)
-                        .withOpacity(
-                      currentIndex == entry.key ? 0.9 : 0.4,
-                    ),
+                    vertical: 8.0,
+                    horizontal: 4.0,
                   ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12.0),
+                      ),
+                      color: (Theme.of(context).brightness == Brightness.dark
+                              ? Colors.grey
+                              : Colors.grey)
+                          .withOpacity(currentIndex == entry.key ? 0.9 : 0.4)),
                 ),
               );
             }).toList(),

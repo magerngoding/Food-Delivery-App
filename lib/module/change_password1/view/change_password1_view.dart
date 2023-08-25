@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/UnderlineTextField/custome_underline_textfield.dart';
-import '../controller/change_password1_controller.dart';
 
 class ChangePassword1View extends StatefulWidget {
   const ChangePassword1View({Key? key}) : super(key: key);
@@ -11,76 +9,83 @@ class ChangePassword1View extends StatefulWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ChangePassword1"),
+        title: const Text("Change Password"),
         actions: const [],
       ),
       body: SingleChildScrollView(
+        controller: ScrollController(),
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
-            children: const [
-              Row(
-                children: [
-                  const Icon(
-                    Icons.chevron_left,
-                    size: 24.0,
-                  ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Profile Settings",
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 40.0,
-              ),
-              CustomeUnderlineTextField(
-                labelText: 'PASSWORD',
-                initialValue: 'password',
+            children: [
+              QAlternativeTextField(
+                labelText: "PASSWORD",
+                initialValue: "password",
                 obscureText: true,
                 readOnly: true,
                 suffixIcon: Icon(
                   Icons.visibility_off,
+                  size: 20,
                 ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              CustomeUnderlineTextField(
-                labelText: 'NEW PASSWORD',
-                initialValue: 'newpassword',
+              QAlternativeTextField(
+                labelText: "NEW PASSWORD",
+                initialValue: "newpassword",
                 obscureText: true,
                 readOnly: false,
                 suffixIcon: Icon(
                   Icons.visibility_off,
+                  size: 20,
                 ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              CustomeUnderlineTextField(
-                labelText: 'CONFIRM PASSWORD',
-                initialValue: 'newpassword',
+              QAlternativeTextField(
+                labelText: "CONFIRM PASSWORD",
+                initialValue: "newpassword",
                 obscureText: true,
                 readOnly: false,
                 suffixIcon: Icon(
                   Icons.visibility_off,
+                  size: 20,
                 ),
               ),
               const SizedBox(
-                height: 20.0,
+                height: 63.0,
+              ),
+              QAlternativeRoundedTextField(
+                hintText: "Full Name",
+                suffixIcon: null,
+              ),
+              const SizedBox(
+                height: 14.0,
+              ),
+              QAlternativeRoundedTextField(
+                hintText: "Email Address",
+                suffixIcon: null,
+              ),
+              const SizedBox(
+                height: 14.0,
+              ),
+              QAlternativeRoundedTextField(
+                hintText: "Password",
+                suffixIcon: Icon(
+                  Icons.visibility_off,
+                  size: 20,
+                ),
+                obscureText: true,
               ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: QActionButton(
+        label: "Change Password",
+        onPressed: () {},
       ),
     );
   }

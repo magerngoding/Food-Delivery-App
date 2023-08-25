@@ -20,8 +20,8 @@ class DashboardWidgetController extends State<DashboardWidgetView>
 
   List menuList = [
     {
-      "label": "ModuleList",
-      "view": ModuleListWidgetView(),
+      "label": "Module List",
+      "view": ModuleListView(),
     },
     {
       "label": "Color",
@@ -48,8 +48,8 @@ class DashboardWidgetController extends State<DashboardWidgetView>
       "view": ButtonWidgetView(),
     },
     {
-      "label": "Uncategorized widget",
-      "view": UncategoriezedWidgetView(),
-    },
+      "label": "Uncategorized Widget",
+      "view": UncategorizedWidgetView(),
+    }
   ];
 }

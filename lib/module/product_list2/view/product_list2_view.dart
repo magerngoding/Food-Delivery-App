@@ -11,20 +11,22 @@ class ProductList2View extends StatefulWidget {
       appBar: AppBar(
         title: const Text(
           "Browse Foods",
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
-            fontSize: 16,
+            fontSize: 16.0,
           ),
         ),
         leading: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: const Icon(
             Icons.arrow_back_ios,
             size: 24.0,
           ),
         ),
-        centerTitle: true,
         actions: const [],
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -38,19 +40,15 @@ class ProductList2View extends StatefulWidget {
                   var item = controller.products[index];
                   return ProductVerticalCard(
                     images: [
-                      item['photo'],
-                      "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                      item["photo"],
+                      "https://images.unsplash.com/photo-1613844237701-8f3664fc2eff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFNPVVB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     ],
-                    title: item['product_name'],
-                    categories: [
-                      'Masakan Nusantara',
-                      'Padang',
-                      'Sumatskut',
-                    ],
+                    title: item["product_name"],
+                    categories: ["Masakan Nusantara", "Padang", "Sumatera"],
                     ratingCount: 300,
-                    delivery: 'Free',
-                    rating: 4.6,
-                    time: '15 Min',
+                    delivery: "Free",
+                    rating: 4.8,
+                    time: "30min",
                     margin: const EdgeInsets.only(
                       bottom: 20.0,
                     ),

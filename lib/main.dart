@@ -8,11 +8,11 @@ void main() async {
 }
 
 runMainApp() async {
-  return runApp(const MainApp());
+  return runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({Key? key}) : super(key: key);
+  MainApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
       valueListenable: Get.mainTheme,
       builder: (context, value, child) {
         return MaterialApp(
-          title: '',
+          title: 'Mager Ngoding',
           navigatorKey: Get.navigatorKey,
           debugShowCheckedModeBanner: false,
           theme: getDefaultTheme(),

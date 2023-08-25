@@ -15,9 +15,17 @@ class FormWidgetView extends StatefulWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                ),
+                onPressed: () => Get.to(HUIWidgetDemoView()),
+                child: const Text("HUIWidgetDemoView"),
+              ),
+              Divider(),
               //#TEMPLATE q_radiofield_with_header
               QRadioFieldWithHeader(
                 label: "Gender",
@@ -35,29 +43,24 @@ class FormWidgetView extends StatefulWidget {
                 onChanged: (value, label) {},
               ),
               //#END
-
               QRadioFieldWithHeader(
                 label: "Gender",
                 validator: Validator.atLeastOneitem,
                 items: [
                   {
-                    "label": "A",
+                    "label": "XXX",
                     "value": 1,
                   },
                   {
-                    "label": "B",
-                    "value": 1,
+                    "label": "YYY",
+                    "value": 2,
                   },
                   {
-                    "label": "C",
-                    "value": 1,
+                    "label": "ZZZ",
+                    "value": 2,
                   },
                   {
-                    "label": "Female",
-                    "value": 1,
-                  },
-                  {
-                    "label": "Male",
+                    "label": "DDD",
                     "value": 2,
                   }
                 ],

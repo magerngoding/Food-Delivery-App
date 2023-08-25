@@ -18,4 +18,19 @@ class TypeLocation1Controller extends State<TypeLocation1View>
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  List<Map> suggestionsList = [
+    {
+      "title": "San Fransisco",
+      "subtitle": "California",
+    },
+    {
+      "title": "San Fransisco City Hall",
+      "subtitle": "California",
+    },
+    {
+      "title": "San Fransisco, CA",
+      "subtitle": "Cordoba",
+    },
+  ];
 }

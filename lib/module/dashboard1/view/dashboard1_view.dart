@@ -1,49 +1,103 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, invalid_use_of_protected_member, unused_local_variable
 import 'package:flutter/material.dart';
-
 import 'package:hyper_ui/core.dart';
 
 class Dashboard1View extends StatefulWidget {
-  Dashboard1View({
-    Key? key,
-  }) : super(key: key);
+  Dashboard1View({Key? key}) : super(key: key);
 
   Widget build(context, Dashboard1Controller controller) {
     controller.view = this;
 
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
-        leading: Container(),
-        leadingWidth: 0,
         centerTitle: true,
+        leading: Container(),
+        leadingWidth: 0.0,
         title: QLocationText(
-          title: 'Delivery',
-          onPressed: () {
-            Get.back();
-          },
+          title: "Delivery to",
         ),
         actions: [
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Text(
-              "Filter",
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          const SizedBox(
-            width: 20.0,
-          ),
+          // Text(
+          //   "Filter",
+          //   style: TextStyle(
+          //     fontSize: 16.0,
+          //     color: Colors.black,
+          //   ),
+          // ),
+          // const SizedBox(
+          //   width: 20.0,
+          // ),
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Container(
+              height: 68,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(14.0),
+                      ),
+                      child: Image.network(
+                        "https://i.ibb.co/fG2NQrx/shopping-cart-icon.png",
+                        width: 34.0,
+                        height: 34.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 14.0,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "VIEW CART",
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: secondaryTextColor,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 2.0,
+                        ),
+                        Text(
+                          "Uncle Boy's",
+                          style: TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Text(
+                      "1 items",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: secondaryTextColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )),
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(20.0),
           child: Column(
             children: [
               QCarouselBottomRightSlider(
+                height: 160,
                 images: [
                   "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
                   "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
@@ -52,19 +106,18 @@ class Dashboard1View extends StatefulWidget {
                   "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80",
                 ],
                 borderRadius: BorderRadius.all(
-                  Radius.circular(20),
+                  Radius.circular(12.0),
                 ),
-                height: 160,
               ),
               const SizedBox(
-                height: 20.0,
+                height: 24.0,
               ),
               H3(
-                  title: 'Feature Partners',
-                  subtitle: 'See all',
-                  onPressed: () {}),
+                title: "Feature Partners",
+                subtitle: "See all",
+              ),
               const SizedBox(
-                height: 12.0,
+                height: 24.0,
               ),
               SizedBox(
                 height: 255.0,
@@ -76,15 +129,15 @@ class Dashboard1View extends StatefulWidget {
                   itemBuilder: (context, index) {
                     var item = controller.image[index];
                     return ProductCard(
-                      margin: EdgeInsets.only(
-                        right: 12,
-                      ),
                       image: item,
-                      title: 'Soup',
-                      location: 'Bogor',
-                      delivery: 'Free',
-                      rating: 3.3,
-                      time: '20Min',
+                      title: "Soup",
+                      location: "Pekanbaru, Indonesia",
+                      delivery: "free",
+                      rating: 3.4,
+                      time: "25min",
+                      margin: const EdgeInsets.only(
+                        right: 12.0,
+                      ),
                     );
                   },
                 ),
@@ -93,16 +146,16 @@ class Dashboard1View extends StatefulWidget {
                 height: 24.0,
               ),
               PromotionCard(
-                title: 'Free Delivery',
-                subTitle:
-                    "You've order at least \$10 for using free delivery for 1 month.",
+                title: "Free Delivery",
+                subtitle:
+                    r"You've to order at least  for using free delivery for I month.",
               ),
               const SizedBox(
                 height: 24.0,
               ),
               H5(
-                title: 'Best Picks Restaurant by team',
-                subtitle: 'See all',
+                title: "Best Picks Restaurants by team",
+                subtitle: "See All",
               ),
               const SizedBox(
                 height: 24.0,
@@ -118,13 +171,13 @@ class Dashboard1View extends StatefulWidget {
                     var item = controller.image[index];
                     return ProductCard(
                       image: item,
-                      title: 'Soup',
-                      location: 'Jakarta',
-                      delivery: 'Free',
-                      rating: 3.2,
-                      time: '20Min',
-                      margin: EdgeInsets.only(
-                        right: 12,
+                      title: "Soup",
+                      location: "Pekanbaru, Indonesia",
+                      delivery: "free",
+                      rating: 3.4,
+                      time: "25min",
+                      margin: const EdgeInsets.only(
+                        right: 12.0,
                       ),
                     );
                   },
@@ -134,11 +187,11 @@ class Dashboard1View extends StatefulWidget {
                 height: 24.0,
               ),
               H5(
-                title: 'Best Picks Restaurant by team',
-                subtitle: 'See all',
+                title: "Best Picks Restaurants by team",
+                subtitle: "See All",
               ),
               const SizedBox(
-                height: 10.0,
+                height: 24.0,
               ),
               ListView.builder(
                 itemCount: 10,
@@ -146,22 +199,18 @@ class Dashboard1View extends StatefulWidget {
                 padding: EdgeInsets.zero,
                 clipBehavior: Clip.none,
                 itemBuilder: (context, index) {
-                  var item = {};
                   return ProductVerticalCard(
                     images: [
-                      "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-                      "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
-                      "https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=428&q=80",
+                      "https://images.unsplash.com/photo-1555072956-7758afb20e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+                      "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80",
+                      "https://images.unsplash.com/photo-1613844237701-8f3664fc2eff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFNPVVB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     ],
-                    title: 'Pizza',
-                    categories: [
-                      'Masakan Nusanrata',
-                      'Padang',
-                    ],
+                    title: "Soup Kuning",
+                    categories: ["Masakan Nusantara", "Padang"],
                     ratingCount: 300,
-                    delivery: 'Free',
-                    rating: 4.6,
-                    time: '15 Min',
+                    delivery: "Free",
+                    rating: 4.8,
+                    time: "30min",
                     margin: const EdgeInsets.only(
                       bottom: 20.0,
                     ),
@@ -172,70 +221,9 @@ class Dashboard1View extends StatefulWidget {
           ),
         ),
       ),
-      extendBody: true,
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Card(
-          elevation: 4,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          child: Container(
-            height: 68,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        14,
-                      ),
-                    ),
-                    child: Image.network(
-                      "https://i.ibb.co/fG2NQrx/shopping-cart-icon.png",
-                      width: 34.0,
-                      height: 34.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 14.0,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "VIEW CART",
-                        style: TextStyle(
-                            fontSize: 12.0, color: secondaryTextColor),
-                      ),
-                      const SizedBox(
-                        height: 2.0,
-                      ),
-                      Text(
-                        "Uncle Boy`s",
-                        style: TextStyle(
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  Text(
-                    "1 items",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      color: secondaryTextColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
     );
   }
 
+  @override
   State<Dashboard1View> createState() => Dashboard1Controller();
 }

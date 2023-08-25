@@ -8,16 +8,20 @@ class RestaurantList2View extends StatefulWidget {
   Widget build(context, RestaurantList2Controller controller) {
     controller.view = this;
 
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Container(
             child: Column(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height,
+                  height: MediaQuery.of(context).size.height * 3.3,
                   decoration: const BoxDecoration(
-                    color: Colors.orange,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        16.0,
+                      ),
+                    ),
                   ),
                   child: Stack(
                     children: [
@@ -70,7 +74,7 @@ class RestaurantList2View extends StatefulWidget {
                               },
                             ),
                             Positioned(
-                              top: 10,
+                              top: 54,
                               left: 0,
                               right: 0,
                               child: Container(
@@ -78,7 +82,7 @@ class RestaurantList2View extends StatefulWidget {
                                 decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(
-                                      8.0,
+                                      16.0,
                                     ),
                                   ),
                                 ),
@@ -93,18 +97,22 @@ class RestaurantList2View extends StatefulWidget {
                                       },
                                       child: CircleAvatar(
                                         backgroundColor: Colors.white,
+                                        radius: 28.0,
                                         child: Icon(
-                                          Icons.arrow_back_ios,
+                                          Icons.arrow_back,
                                           color: Colors.black,
+                                          size: 28.0,
                                         ),
                                       ),
                                     ),
                                     Spacer(),
                                     CircleAvatar(
                                       backgroundColor: Colors.white,
+                                      radius: 28.0,
                                       child: Icon(
                                         Icons.search,
                                         color: Colors.black,
+                                        size: 28.0,
                                       ),
                                     ),
                                     const SizedBox(
@@ -118,18 +126,15 @@ class RestaurantList2View extends StatefulWidget {
                         ),
                       ),
                       Positioned(
-                        top: 300,
+                        top: 280,
                         left: 0,
                         right: 0,
                         child: Container(
-                          height: MediaQuery.of(context).size.height,
                           padding: const EdgeInsets.symmetric(horizontal: 20.0),
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(
-                                16,
-                              ),
+                              top: Radius.circular(16.0),
                             ),
                           ),
                           child: Column(
@@ -138,7 +143,7 @@ class RestaurantList2View extends StatefulWidget {
                                 height: 36.0,
                               ),
                               H3(
-                                title: 'Top Pick Restaurants',
+                                title: "Top Pick Restaurants",
                               ),
                               const SizedBox(
                                 height: 16.0,
@@ -172,11 +177,13 @@ class RestaurantList2View extends StatefulWidget {
                                         ),
                                         child: Center(
                                           child: Text(
-                                            "$item",
+                                            "${item}",
                                             style: TextStyle(
-                                                color: selected
-                                                    ? primaryColor
-                                                    : Colors.grey),
+                                              color: selected
+                                                  ? primaryColor
+                                                  : Colors.grey,
+                                              fontSize: 12.0,
+                                            ),
                                           ),
                                         ),
                                       );
@@ -193,8 +200,8 @@ class RestaurantList2View extends StatefulWidget {
                                     SliverGridDelegateWithFixedCrossAxisCount(
                                   childAspectRatio: 1 / 2,
                                   crossAxisCount: 2,
-                                  mainAxisSpacing: 6,
-                                  crossAxisSpacing: 6,
+                                  mainAxisSpacing: 15,
+                                  crossAxisSpacing: 15,
                                 ),
                                 itemCount: controller.products.length,
                                 shrinkWrap: true,
@@ -202,17 +209,13 @@ class RestaurantList2View extends StatefulWidget {
                                 itemBuilder: (BuildContext context, int index) {
                                   var item = controller.products[index];
                                   return Container(
-                                    height: 200,
                                     child: ProductRatingCard(
-                                      image: item['photo'],
-                                      title: item['product_name'],
-                                      categories: [
-                                        'Chinese',
-                                        'Traditional',
-                                      ],
+                                      image: item["photo"],
+                                      title: item["product_name"],
+                                      categories: ["Chinese", "Traditional"],
                                       rating: 4.5,
-                                      time: '15Min',
-                                      delivery: 'Free',
+                                      time: "25min",
+                                      delivery: "Free",
                                     ),
                                   );
                                 },

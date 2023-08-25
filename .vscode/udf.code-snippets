@@ -1,31 +1,67 @@
 {
+  "q_button": {
+    "prefix": "q_button",
+    "body": "QButton(\nlabel: \"Checkout\",\nonPressed: () {},\n),"
+  },
+  "q_button_outline": {
+    "prefix": "q_button_outline",
+    "body": "QOutlineButton(\nlabel: \"Checkout\",\nonPressed: () {},\n),"
+  },
+  "q_button_outline_success": {
+    "prefix": "q_button_outline_success",
+    "body": "QOutlineSuccessButton(\nlabel: \"Checkout\",\nonPressed: () {},\n),"
+  },
+  "q_button_outline_danger": {
+    "prefix": "q_button_outline_danger",
+    "body": "QOutlineDangerButton(\nlabel: \"Checkout\",\nonPressed: () {},\n),"
+  },
+  "q_button_outline_icon": {
+    "prefix": "q_button_outline_icon",
+    "body": "QOutlineIconButton(\nlabel: \"Checkout\",\nicon: Icons.wallet,\nonPressed: () {},\n),"
+  },
+  "q_action_button_with_options": {
+    "prefix": "q_action_button_with_options",
+    "body": "QActionButtonWithOptions(\nlabel: \"Checkout\",\nicon: Icons.share,\nonPressed: () {},\nonOptionPressed: () {},\n),"
+  },
+  "q_action_button": {
+    "prefix": "q_action_button",
+    "body": "QActionButton(\nlabel: \"Checkout\",\nonPressed: () {},\n),"
+  },
   "q_product_card": {
     "prefix": "q_product_card",
-    "body": "ProductCard(\nimage:\n'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',\ntitle: 'Pancake',\nlocation: 'Bogor',\nrating: 4.5,\ntime: '25Min',\ndelivery: 'Free',\n),"
+    "body": "ProductCard(\nimage:\n\"https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvb2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60\",\ntitle: \"Miracle Bread\",\nlocation: \"Bogor\",\nrating: 4.5,\ntime: \"25min\",\ndelivery: \"Free\",\n),"
+  },
+  "q_product_card2": {
+    "prefix": "q_product_card2",
+    "body": "ProductCard2(\nimage:\n\"https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvb2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60\",\ntitle: \"Miracle Bread\",\ncategory: \"Bread\",\n),"
   },
   "q_product_rating_card": {
     "prefix": "q_product_rating_card",
-    "body": "ProductRatingCard(\nimage:\n'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80',\ntitle: 'Pancake',\ncategories: [\n'Chinese',\n'Traditional',\n],\nrating: 4.5,\ntime: '15Min',\ndelivery: 'Free',\n),"
+    "body": "Container(\nheight: 300,\nchild: ProductRatingCard(\nimage:\n\"https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvb2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60\",\ntitle: \"Miracle Bread\",\ncategories: [\"Chinese\", \"Traditional\"],\nrating: 4.5,\ntime: \"25min\",\ndelivery: \"Free\",\n),\n),"
   },
   "q_product_vertical_card": {
     "prefix": "q_product_vertical_card",
-    "body": "ProductVerticalCard(\nimages: [\n\"https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80\",\n],\ntitle: 'Pizza',\ncategories: [\n'Masakan Nusantara',\n'Padang',\n'Sumatskut',\n],\nratingCount: 300,\ndelivery: 'Free',\nrating: 4.6,\ntime: '15 Min',\n),"
+    "body": "ProductVerticalCard(\nimages: [\n\"https://images.unsplash.com/photo-1613844237701-8f3664fc2eff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFNPVVB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60\",\n],\ntitle: \"Soup Kuning\",\ncategories: [\"Masakan Nusantara\", \"Padang\", \"Sumatera\"],\nratingCount: 300,\ndelivery: \"Free\",\nrating: 4.8,\ntime: \"30min\",\n),"
+  },
+  "q_product_vertical_card2": {
+    "prefix": "q_product_vertical_card2",
+    "body": "ProductVerticalCard2(\nimage:\n\"https://images.unsplash.com/photo-1613844237701-8f3664fc2eff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFNPVVB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60\",\ntitle: \"Soft Drink\",\nsubtitle: \"Chinese\",\nmargin: const EdgeInsets.only(\nright: 10.0,\n),\n),"
   },
   "q_promotion_card": {
     "prefix": "q_promotion_card",
-    "body": "PromotionCard(\ntitle: 'Free Delivery',\nsubTitle:\nr\"You've order at least \\$10 for using free delivery for 1 month.\",\n),"
+    "body": "PromotionCard(\ntitle: \"Free Delivery\",\nsubtitle:\nr\"You've to order at least $10 for using free delivery for I month.\",\n),"
   },
-  "q_carousel": {
-    "prefix": "q_carousel",
-    "body": "QCarouselSlider(\nimages: [\n\"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80\",\n\"https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80\",\n\"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80\",\n],\nheight: 160,\n),"
+  "q_carousel1": {
+    "prefix": "q_carousel1",
+    "body": "QCarouselSlider(\nheight: 160,\nimages: [\n\"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80\",\n\"https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80\",\n\"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80\",\n],\n),"
   },
   "q_carousel2": {
     "prefix": "q_carousel2",
-    "body": "QCarouselBottomRightSlider(\nimages: [\n\"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80\",\n\"https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80\",\n\"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80\",\n],\nheight: 160,\n),"
+    "body": "QCarouselBottomRightSlider(\nheight: 160,\nimages: [\n\"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80\",\n\"https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80\",\n\"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80\",\n],\n),"
   },
   "q_carousel3": {
     "prefix": "q_carousel3",
-    "body": "QCarouselBottomRightSlider(\nimages: [\n\"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80\",\n\"https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80\",\n\"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80\",\n],\nborderRadius: BorderRadius.all(\nRadius.circular(20),\n),\nheight: 160,\n),"
+    "body": "QCarouselBottomRightSlider(\nheight: 160,\nimages: [\n\"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80\",\n\"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80\",\n\"https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80\",\n\"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80\",\n],\nborderRadius: BorderRadius.all(\nRadius.circular(12.0),\n),\n),"
   },
   "q_radiofield_with_header": {
     "prefix": "q_radiofield_with_header",
@@ -33,26 +69,62 @@
   },
   "h1": {
     "prefix": "h1",
-    "body": "H1(title: 'Heading 1'),"
+    "body": "H1(title: \"Heading1\"),"
   },
   "h2": {
     "prefix": "h2",
-    "body": "H2(title: 'Heading 2'),"
+    "body": "H2(title: \"Heading2\"),"
   },
   "h3": {
     "prefix": "h3",
-    "body": "H3(\ntitle: 'Heading 3',\nsubtitle: '123',\nonPressed: () {\nprint('h3');\n}),"
+    "body": "H3(title: \"Heading3\"),"
   },
   "h4": {
     "prefix": "h4",
-    "body": "H4(title: 'Heading 3'),"
+    "body": "H4(title: \"Heading4\"),"
+  },
+  "h5": {
+    "prefix": "h5",
+    "body": "H5(title: \"Heading5\"),"
+  },
+  "h6": {
+    "prefix": "h6",
+    "body": "H6(title: \"Heading6\"),"
+  },
+  "hs1": {
+    "prefix": "hs1",
+    "body": "H1(\ntitle: \"Heading1\",\nsubtitle: \"Subtitle1\",\n),"
+  },
+  "hs2": {
+    "prefix": "hs2",
+    "body": "H2(\ntitle: \"Heading2\",\nsubtitle: \"Subtitle2\",\n),"
+  },
+  "hs3": {
+    "prefix": "hs3",
+    "body": "H3(\ntitle: \"Heading3\",\nsubtitle: \"Subtitle3\",\n),"
+  },
+  "hs4": {
+    "prefix": "hs4",
+    "body": "H4(\ntitle: \"Heading4\",\nsubtitle: \"Subtitle4\",\n),"
+  },
+  "hs5": {
+    "prefix": "hs5",
+    "body": "H5(\ntitle: \"Heading5\",\nsubtitle: \"Subtitle5\",\n),"
+  },
+  "hs6": {
+    "prefix": "hs6",
+    "body": "H6(\ntitle: \"Heading6\",\nsubtitle: \"Subtitle6\",\n),"
   },
   "q_category_list": {
     "prefix": "q_category_list",
-    "body": "QCategory_list(\nitems: [\n'Masakan Nusantara',\n'Padang',\n'Bekasi',\n],\n),"
+    "body": "QCategoryList(\nitems: [\n\"Masakan Nusantara\",\n\"Padang\",\n\"Sumatera\",\n],\n),"
   },
   "q_location_text": {
     "prefix": "q_location_text",
-    "body": "QLocationText(\ntitle: 'Delivery',\nonPressed: () {\nGet.back();\n},\n),"
+    "body": "QLocationText(\ntitle: \"Delivery to\",\n),"
+  },
+  "q_counter_picker": {
+    "prefix": "q_counter_picker",
+    "body": "QCounterPicker(\nonChanged: (value) {},\n),"
   }
 }

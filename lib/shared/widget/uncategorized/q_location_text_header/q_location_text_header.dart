@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../state_util.dart';
-import '../location_text.dart';
+import '../location_text/location_text.dart';
 
 class QLocationHeaderText extends StatelessWidget {
   const QLocationHeaderText({Key? key}) : super(key: key);
@@ -16,17 +15,19 @@ class QLocationHeaderText extends StatelessWidget {
           children: [
             Spacer(),
             QLocationText(
-              title: 'Delivery to',
-              onPressed: () {
-                Get.back();
-              },
+              title: "Delivery to",
             ),
             Spacer(),
-            TextButton(
-              onPressed: () {},
-              child: const Text("Filter"),
-            ),
           ],
+        ),
+        Positioned(
+          right: 0,
+          top: 0,
+          bottom: 0,
+          child: TextButton(
+            onPressed: () {},
+            child: Text("Filter"),
+          ),
         ),
       ],
     );

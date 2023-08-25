@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
-// ignore: must_be_immutable
 class ProductVerticalCard extends StatelessWidget {
   final List<String> images;
   final String title;
@@ -12,7 +11,6 @@ class ProductVerticalCard extends StatelessWidget {
   final String time;
   final String delivery;
   final EdgeInsetsGeometry? margin;
-
   ProductVerticalCard({
     Key? key,
     required this.images,
@@ -50,30 +48,25 @@ class ProductVerticalCard extends StatelessWidget {
                   ),
                 ),
                 image: DecorationImage(
-                  image: NetworkImage(
-                    images.first,
-                  ),
+                  image: NetworkImage(images.first),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
           if (images.length > 1)
             QCarouselBottomRightSlider(
+              height: 160,
               images: images,
               borderRadius: BorderRadius.all(
-                Radius.circular(20),
+                Radius.circular(12.0),
               ),
-              height: 160,
             ),
           const SizedBox(
             height: 12.0,
           ),
           Text(
             title,
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.w500,
-            ),
+            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500),
           ),
           const SizedBox(
             height: 4.0,
@@ -104,17 +97,13 @@ class ProductVerticalCard extends StatelessWidget {
             height: 9.0,
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${rating}',
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.w500,
-                ),
+                "$rating",
+                style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),
               ),
               const SizedBox(
-                width: 9.0,
+                width: 6.0,
               ),
               const Icon(
                 Icons.star,
@@ -125,45 +114,36 @@ class ProductVerticalCard extends StatelessWidget {
                 width: 9.0,
               ),
               Text(
-                '${ratingCount} +Ratings',
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.w500,
-                ),
+                "${ratingCount}+ Ratings",
+                style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 width: 9.0,
               ),
               const Icon(
                 Icons.timer,
-                size: 12.0,
+                color: Colors.black54,
+                size: 14.0,
               ),
               const SizedBox(
-                width: 9.0,
+                width: 6.0,
               ),
               Text(
                 time,
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),
               ),
-              const SizedBox(
-                width: 9.0,
-              ),
+              DotContainer(),
               const Icon(
-                Icons.money_sharp,
-                size: 12.0,
+                Icons.monetization_on,
+                color: Colors.grey,
+                size: 14.0,
               ),
               const SizedBox(
-                width: 9.0,
+                width: 6.0,
               ),
               Text(
                 delivery,
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),
               ),
             ],
           ),

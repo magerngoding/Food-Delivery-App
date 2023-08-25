@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/widget_collection/module_list_widget/controller/module_list_widget_controller.dart';
 
 class ModuleListWidgetView extends StatefulWidget {
   const ModuleListWidgetView({Key? key}) : super(key: key);

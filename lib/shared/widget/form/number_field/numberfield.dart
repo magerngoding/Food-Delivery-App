@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -6,10 +5,11 @@ class QNumberField extends StatefulWidget {
   final String label;
   final String? value;
   final String? hint;
+  final String? helper;
   final String? Function(String?)? validator;
   final Function(String) onChanged;
   final Function(String)? onSubmitted;
-  final IconData? sufficIcon;
+  final IconData? suffixIcon;
 
   final String? pattern;
   final String? locale;
@@ -18,13 +18,14 @@ class QNumberField extends StatefulWidget {
     Key? key,
     required this.label,
     this.value,
-    this.hint,
     this.validator,
+    this.hint,
+    this.helper,
     required this.onChanged,
     this.onSubmitted,
-    this.sufficIcon,
     this.pattern,
     this.locale = "en_US",
+    this.suffixIcon,
   }) : super(key: key);
 
   @override
@@ -38,12 +39,11 @@ class _QNumberFieldState extends State<QNumberField> {
   @override
   void initState() {
     super.initState();
-
-    RegExp r = RegExp(r'^[0-9]+(\.[0-9]+)?$');
-    value = widget.value?.replaceAll(RegExp(r'^[0-9,]+$'), '');
-    controller = TextEditingController(
-      text: formattedValue,
-    );
+    value = widget.value?.replaceAll(RegExp(r'[^0-9.]'), '');
+    print("value: $value");
+    print("value: ${widget.value}");
+    controller = TextEditingController();
+    controller.text = formattedValue?.toString() ?? "";
   }
 
   String? get formattedValue {
@@ -57,45 +57,49 @@ class _QNumberFieldState extends State<QNumberField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      validator: widget.validator,
-      maxLength: 20,
-      keyboardType: TextInputType.number,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: widget.label,
-        suffix: widget.sufficIcon != null ? Icon(widget.sufficIcon) : null,
-        helperText: widget.hint,
+    return Container(
+      margin: const EdgeInsets.only(
+        bottom: 12.0,
       ),
-      onChanged: (newValue) {
-        var newValue = controller.text;
-        print("newValue: $newValue");
+      child: TextFormField(
+        controller: controller,
+        validator: widget.validator,
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+          labelText: widget.label,
+          suffix: widget.suffixIcon != null ? Icon(widget.suffixIcon) : null,
+          helperText: widget.helper,
+          hintText: widget.hint,
+        ),
+        onChanged: (newValue) {
+          var newValue = controller.text;
+          print("newValue: $newValue");
 
-        value = newValue.replaceAll(RegExp(r'[^0-9.]'), '');
+          value = newValue.replaceAll(RegExp(r'[^0-9.]'), '');
 
-        print("value: $value");
-        controller.text = formattedValue ?? "";
-        controller.selection =
-            TextSelection.collapsed(offset: controller.text.length);
+          print("value: $value");
+          controller.text = formattedValue ?? "";
+          controller.selection =
+              TextSelection.collapsed(offset: controller.text.length);
 
-        widget.onChanged(newValue.replaceAll(RegExp(r'\D'), ''));
-      },
-      onFieldSubmitted: (newValue) {
-        var newValue = controller.text;
-        print("newValue: $newValue");
+          widget.onChanged(newValue.replaceAll(RegExp(r'\D'), ''));
+        },
+        onFieldSubmitted: (newValue) {
+          var newValue = controller.text;
+          print("newValue: $newValue");
 
-        value = newValue.replaceAll(RegExp(r'[^0-9.]'), '');
+          value = newValue.replaceAll(RegExp(r'[^0-9.]'), '');
 
-        print("value: $value");
-        controller.text = formattedValue ?? "";
-        controller.selection =
-            TextSelection.collapsed(offset: controller.text.length);
+          print("value: $value");
+          controller.text = formattedValue ?? "";
+          controller.selection =
+              TextSelection.collapsed(offset: controller.text.length);
 
-        if (widget.onSubmitted != null) {
-          widget.onSubmitted!(newValue.replaceAll(RegExp(r'\D'), ''));
-        }
-      },
+          if (widget.onSubmitted != null) {
+            widget.onSubmitted!(newValue.replaceAll(RegExp(r'\D'), ''));
+          }
+        },
+      ),
     );
   }
 }

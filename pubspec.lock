@@ -720,14 +720,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.0"
-  rex:
-    dependency: "direct main"
-    description:
-      name: rex
-      sha256: "7faec250e23fef72e20ed776483184ca2249a8d2316ede1137d7d6f776e8b6bc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.5"
   rxdart:
     dependency: transitive
     description:

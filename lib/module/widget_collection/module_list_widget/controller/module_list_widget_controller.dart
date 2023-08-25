@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/widget_collection/module_list_widget/view/module_list_widget_view.dart';
+
+import '../../../forgot_password/view/ForgotPassword_view.dart';
 
 class ModuleListWidgetController extends State<ModuleListWidgetView>
     implements MvcController {

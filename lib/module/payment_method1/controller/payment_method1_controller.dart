@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hyper_ui/state_util.dart';
 import '../view/payment_method1_view.dart';
 
-class PaymentMethod1Controller extends State<PaymentMethod1View>
-    implements MvcController {
+class PaymentMethod1Controller extends State<PaymentMethod1View> implements MvcController {
   static late PaymentMethod1Controller instance;
   late PaymentMethod1View view;
 

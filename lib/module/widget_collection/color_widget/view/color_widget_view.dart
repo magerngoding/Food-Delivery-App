@@ -1,55 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/color_widget_controller.dart';
 
 class ColorWidgetView extends StatefulWidget {
-  const ColorWidgetView({Key? key}) : super(key: key);
+  ColorWidgetView({Key? key}) : super(key: key);
 
   Widget build(context, ColorWidgetController controller) {
     controller.view = this;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ColorWidget"),
-        actions: const [],
+        title: Text("ColorWidget"),
+        actions: [],
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             children: [
               GridView.builder(
                 padding: EdgeInsets.zero,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: 1.0,
                   crossAxisCount: 2,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
                 ),
                 itemCount: controller.colors.length,
                 shrinkWrap: true,
-                physics: const ScrollPhysics(),
+                physics: ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
-                  // mengambil variabel color
                   var item = controller.colors[index];
                   return Container(
                     decoration: BoxDecoration(
-                        color: item['color'],
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          width: 1,
-                          color: Colors.grey,
-                        )),
+                      color: item["color"],
+                      border: Border.all(
+                        width: 1.0,
+                        color: Colors.grey[700]!,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12.0),
+                      ),
+                    ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Card(
                           color: Colors.black,
-                          child: Text(
-                            '${item['label']}',
-                            style: TextStyle(
-                              color: Colors.white,
+                          child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              "${item["label"]}",
+                              style: TextStyle(
+                                fontSize: 10.0,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),

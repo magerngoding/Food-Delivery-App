@@ -19,15 +19,9 @@ class RestaurantList2Controller extends State<RestaurantList2View>
   @override
   Widget build(BuildContext context) => widget.build(context, this);
 
-  List category = [
-    'Burgers',
-    'Brunch',
-    'Breakfast',
-    'Hot Dog',
-    'Fly Frying Chicken',
-  ];
+  List category = ["BURGERS", "BRUNCH", "BREAKFAST", "DINNER", "SNACK"];
 
-  List<Map<String, dynamic>> products = [
+  List products = [
     {
       "id": 1,
       "photo":
@@ -37,8 +31,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Food",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 20,
-      "is_favorite": false,
     },
     {
       "id": 2,
@@ -49,8 +41,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Food",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 18,
-      "is_favorite": true,
     },
     {
       "id": 3,
@@ -61,8 +51,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Drink",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 28,
-      "is_favorite": false,
     },
     {
       "id": 4,
@@ -73,8 +61,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Food",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 25,
-      "is_favorite": true,
     },
     {
       "id": 5,
@@ -85,8 +71,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Drink",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 28,
-      "is_favorite": true,
     },
     {
       "id": 6,
@@ -97,8 +81,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Food",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 45,
-      "is_favorite": false,
     },
     {
       "id": 7,
@@ -109,8 +91,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Drink",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 56,
-      "is_favorite": false,
     },
     {
       "id": 8,
@@ -121,8 +101,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Drink",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 50,
-      "is_favorite": true,
     },
     {
       "id": 9,
@@ -133,8 +111,6 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Drink",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 50,
-      "is_favorite": true
     },
     {
       "id": 10,
@@ -145,8 +121,26 @@ class RestaurantList2Controller extends State<RestaurantList2View>
       "category": "Drink",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "discount_price": 50,
-      "is_favorite": true
+    },
+    {
+      "id": 11,
+      "photo":
+          "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "product_name": "Silvana Tea",
+      "price": 56,
+      "category": "Drink",
+      "description":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
+    {
+      "id": 12,
+      "photo":
+          "https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "product_name": "Paradox Tea",
+      "price": 56,
+      "category": "Drink",
+      "description":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
   ];
 }

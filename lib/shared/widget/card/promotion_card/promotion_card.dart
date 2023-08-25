@@ -1,13 +1,14 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 class PromotionCard extends StatelessWidget {
   final String title;
-  final String subTitle;
+  final String subtitle;
   const PromotionCard({
     Key? key,
     required this.title,
-    required this.subTitle,
+    required this.subtitle,
   }) : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class PromotionCard extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
-            "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+            "https://images.unsplash.com/photo-1501959915551-4e8d30928317?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
           ),
           fit: BoxFit.cover,
         ),
@@ -28,7 +29,7 @@ class PromotionCard extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(30),
+        padding: EdgeInsets.all(30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +37,7 @@ class PromotionCard extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                fontSize: 20.0,
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -44,7 +45,7 @@ class PromotionCard extends StatelessWidget {
               height: 6.0,
             ),
             Text(
-              subTitle,
+              subtitle,
               style: TextStyle(
                 fontSize: 14.0,
               ),

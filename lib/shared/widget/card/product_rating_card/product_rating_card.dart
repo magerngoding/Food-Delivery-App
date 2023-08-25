@@ -1,33 +1,40 @@
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:hyper_ui/core.dart';
 
-class ProductRatingCard extends StatelessWidget {
+import '../../shape/dot_center/dot_container.dart';
+
+class ProductRatingCard extends StatefulWidget {
   final String image;
   final String title;
-
+  final List<String> categories;
   final double rating;
   final String time;
   final String delivery;
   final EdgeInsetsGeometry? margin;
-  final List<String> categories;
-  const ProductRatingCard({
+
+  ProductRatingCard({
     Key? key,
     required this.image,
     required this.title,
     required this.rating,
     required this.time,
     required this.delivery,
-    this.margin,
     required this.categories,
+    this.margin,
   }) : super(key: key);
 
+  @override
+  State<ProductRatingCard> createState() => _ProductRatingCardState();
+}
+
+class _ProductRatingCardState extends State<ProductRatingCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 200,
-      margin: margin,
-      decoration: const BoxDecoration(
+      margin: widget.margin,
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(
             16.0,
@@ -43,7 +50,7 @@ class ProductRatingCard extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                    image,
+                    widget.image,
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -68,43 +75,43 @@ class ProductRatingCard extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Icon(
+                            Icon(
                               MdiIcons.clock,
                               size: 16.0,
                               color: Colors.white,
                             ),
-                            const SizedBox(
-                              width: 4.0,
+                            SizedBox(
+                              width: 6.0,
                             ),
                             Text(
-                              time,
+                              widget.time,
                               style: TextStyle(
                                 fontSize: 12.0,
                                 color: Colors.white,
                               ),
-                            ),
+                            )
                           ],
                         ),
-                        const SizedBox(
-                          height: 6.0,
+                        SizedBox(
+                          height: 4.0,
                         ),
                         Row(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.delivery_dining,
                               size: 16.0,
                               color: Colors.white,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 6.0,
                             ),
                             Text(
-                              delivery,
+                              widget.delivery,
                               style: TextStyle(
                                 fontSize: 12.0,
                                 color: Colors.white,
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ],
@@ -126,12 +133,8 @@ class ProductRatingCard extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          '${rating}',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          "${widget.rating}",
+                          style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
@@ -140,42 +143,36 @@ class ProductRatingCard extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
+          SizedBox(
             height: 6.0,
           ),
           Text(
-            title,
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.w500,
-            ),
+            widget.title,
+            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500),
           ),
-          const SizedBox(
+          SizedBox(
             height: 4.0,
           ),
           SingleChildScrollView(
             controller: ScrollController(),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: List.generate(
-                categories.length,
-                (index) {
-                  var category = categories[index];
-                  return Row(
-                    children: [
-                      if (index > 0) DotContainer(),
-                      Text(
-                        "${category} ",
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.grey[600],
-                        ),
+              children: List.generate(widget.categories.length, (index) {
+                var category = widget.categories[index];
+                return Row(
+                  children: [
+                    if (index > 0) DotContainer(),
+                    Text(
+                      "${category}",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[600],
                       ),
-                    ],
-                  );
-                },
-              ),
+                    ),
+                  ],
+                );
+              }),
             ),
           ),
         ],

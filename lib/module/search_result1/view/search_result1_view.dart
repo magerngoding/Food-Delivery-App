@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/search_result1_controller.dart';
 
 class SearchResult1View extends StatefulWidget {
   const SearchResult1View({Key? key}) : super(key: key);
@@ -15,9 +14,22 @@ class SearchResult1View extends StatefulWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
-            children: const [],
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "80 Results found",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SearchDashboardHorizontalList(),
+            ],
           ),
         ),
       ),

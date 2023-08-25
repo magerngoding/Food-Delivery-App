@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
@@ -9,8 +8,7 @@ import '../textfield/text_field.dart';
 
 class QCountryPicker extends StatefulWidget {
   final Function(String value) onChanged;
-
-  const QCountryPicker({
+  QCountryPicker({
     Key? key,
     required this.onChanged,
   }) : super(key: key);
@@ -549,22 +547,21 @@ class _QCountryPickerState extends State<QCountryPicker> {
     {"name": "Zimbabwe", "flag": "🇿🇼", "code": "ZW", "dial_code": "+263"}
   ];
 
-  List<Map<String, dynamic>> getDropdownItem() {
+  List<Map<String, dynamic>> getDropdownItems() {
     List<Map<String, dynamic>> dropdownItems = [];
     for (var item in items) {
       dropdownItems.add({
-        'label': item['name'],
-        'value': item['code'],
+        "label": item["name"],
+        "value": item["code"],
       });
     }
     return dropdownItems;
   }
 
-  String dialCode = '';
-
+  String dialCode = "";
   setCountryCode(String value) {
-    var item = items.where((i) => i['code'] == value).toList().first;
-    dialCode = item['dial_code'];
+    var item = items.where((i) => i["code"] == value).toList().first;
+    dialCode = item["dial_code"];
     setState(() {});
   }
 
@@ -575,19 +572,16 @@ class _QCountryPickerState extends State<QCountryPicker> {
         Container(
           child: QDropdownField(
             label: "Country",
-            items: getDropdownItem(),
+            items: getDropdownItems(),
             onChanged: (value, label) {
               setCountryCode(value);
             },
           ),
         ),
-        const SizedBox(
-          height: 12.0,
-        ),
         Row(
           children: [
             Container(
-              width: 70,
+              width: 70.0,
               child: QTextField(
                 key: GlobalKey(),
                 label: "Name",
@@ -596,15 +590,14 @@ class _QCountryPickerState extends State<QCountryPicker> {
                 onChanged: (value) {},
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 12.0,
             ),
             Expanded(
               child: QNumberField(
                 label: "Phone number",
-                value: "24",
                 onChanged: (value) {
-                  var inputValue = '${dialCode}${value}'.replaceAll('', '');
+                  var inputValue = "${dialCode}${value}".replaceAll(" ", "");
                   widget.onChanged(inputValue);
                 },
               ),

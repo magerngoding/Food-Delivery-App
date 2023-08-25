@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hyper_ui/state_util.dart';
 import '../view/carousel_widget_view.dart';
 
-class CarouselWidgetController extends State<CarouselWidgetView>
-    implements MvcController {
+class CarouselWidgetController extends State<CarouselWidgetView> implements MvcController {
   static late CarouselWidgetController instance;
   late CarouselWidgetView view;
 

@@ -11,50 +11,48 @@ class ResetEmail1View extends StatefulWidget {
       appBar: AppBar(
         title: const Text("Reset Email"),
         centerTitle: true,
-        elevation: 0,
         actions: const [],
+        elevation: 0.0,
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Reset Email",
-                style: TextStyle(
-                  fontSize: 32.0,
-                  fontWeight: FontWeight.bold,
-                ),
+              H2(
+                title: "Reset Email",
               ),
               const SizedBox(
                 height: 20.0,
               ),
               RichText(
                 text: TextSpan(
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
+                  text: '',
+                  style: DefaultTextStyle.of(context).style,
                   children: <TextSpan>[
                     TextSpan(
                       text:
-                          "We have sent a intructions email to hafizh@gmail.com",
-                      style: TextStyle(),
+                          "We have sent a instructions email to demo@gmail.com. ",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                      ),
                     ),
                     TextSpan(
-                      text: " Having problem?",
+                      text: "Having problem?",
                       style: TextStyle(
+                        fontSize: 14.0,
                         color: primaryColor,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              QBtutton(
-                label: 'Send Again',
+              QButton(
+                label: "Send Again",
                 onPressed: () {},
               ),
             ],

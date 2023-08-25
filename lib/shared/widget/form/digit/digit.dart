@@ -1,11 +1,11 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/material.dart';
+// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
-import '../../../theme/theme_config.dart';
+import 'package:flutter/material.dart';
+import 'package:hyper_ui/core.dart';
 
 class QDigit extends StatefulWidget {
   final Function(String value) onChanged;
-  const QDigit({
+  QDigit({
     Key? key,
     required this.onChanged,
   }) : super(key: key);
@@ -20,7 +20,7 @@ class _QDigitState extends State<QDigit> {
 
   @override
   void initState() {
-    Future.delayed(Duration(microseconds: 500), () {
+    Future.delayed(Duration(milliseconds: 500), () {
       focusNodes[0]!.requestFocus();
     });
     super.initState();
@@ -30,9 +30,12 @@ class _QDigitState extends State<QDigit> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 12.0,
-        ),
+        // Text(
+        //   "$values",
+        //   style: TextStyle(
+        //     fontSize: 12.0,
+        //   ),
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -40,7 +43,7 @@ class _QDigitState extends State<QDigit> {
               onTap: () async {
                 values = [];
                 setState(() {});
-                await Future.delayed(Duration(seconds: 1));
+                await Future.delayed(Duration(milliseconds: 250));
                 focusNodes[0]!.requestFocus();
               },
               child: Text(
@@ -50,7 +53,7 @@ class _QDigitState extends State<QDigit> {
                   color: primaryColor,
                 ),
               ),
-            ),
+            )
           ],
         ),
         const SizedBox(
@@ -58,13 +61,6 @@ class _QDigitState extends State<QDigit> {
         ),
         Container(
           width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(
-              Radius.circular(
-                16.0,
-              ),
-            ),
-          ),
           child: Row(
             children: List.generate(4, (index) {
               if (focusNodes[index] == null) {
@@ -72,7 +68,7 @@ class _QDigitState extends State<QDigit> {
               }
               return Expanded(
                 child: Container(
-                  padding: const EdgeInsets.all(12),
+                  padding: EdgeInsets.all(12.0),
                   margin: EdgeInsets.only(
                     right: index < 3 ? 12 : 0,
                   ),
@@ -80,7 +76,7 @@ class _QDigitState extends State<QDigit> {
                     color: Colors.white,
                     border: Border(
                       bottom: BorderSide(
-                        width: 2,
+                        width: 2.0,
                         color: Colors.grey[700]!,
                       ),
                     ),
@@ -89,46 +85,45 @@ class _QDigitState extends State<QDigit> {
                     child: TextFormField(
                       key: GlobalKey(),
                       focusNode: focusNodes[index],
-                      initialValue: values.length > index ? values[index] : '',
+                      initialValue: values.length > index ? values[index] : "",
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
                       readOnly: values.length != index,
                       decoration: InputDecoration(
+                        hintText: "",
+                        border: InputBorder.none,
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         errorBorder: InputBorder.none,
                         disabledBorder: InputBorder.none,
                         focusedErrorBorder: InputBorder.none,
-                        hintText: '',
-                        border: InputBorder.none,
                         filled: false,
                       ),
                       style: TextStyle(
-                        fontSize: 30,
                         fontWeight: FontWeight.bold,
+                        fontSize: 30.0,
                         decoration: TextDecoration.none,
                       ),
                       onChanged: (value) async {
-                        if (value == '') {
-                          values.remove(value);
+                        if (value == "") {
+                          values.removeLast();
                         } else {
                           values.add(value);
                         }
-
                         setState(() {});
                         await Future.delayed(Duration(milliseconds: 50));
                         if (index == 0) {
-                          focusNodes[index++]!.requestFocus();
+                          focusNodes[1]!.requestFocus();
                         }
                         if (index == 1) {
-                          focusNodes[index++]!.requestFocus();
+                          focusNodes[2]!.requestFocus();
                         }
                         if (index == 2) {
-                          focusNodes[index++]!.requestFocus();
+                          focusNodes[3]!.requestFocus();
                         }
 
                         if (values.length == 4) {
-                          widget.onChanged(values.join(''));
+                          widget.onChanged(values.join(""));
                         }
                       },
                     ),

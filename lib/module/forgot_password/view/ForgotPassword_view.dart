@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/forgot_password/controller/ForgotPassword_controller.dart';
+
+import '../../../shared/widget/button/button.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({Key? key}) : super(key: key);
@@ -20,13 +23,7 @@ class ForgotPasswordView extends StatefulWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Forgot Password",
-                style: TextStyle(
-                  fontSize: 32.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              H2(title: 'Forgot Password'),
               const SizedBox(
                 height: 20.0,
               ),

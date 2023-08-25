@@ -1,10 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
 import 'package:hyper_ui/core.dart';
-
-import '../widget/card_detail2.dart';
-import '../widget/card_product_detail1.dart';
 
 class ProductDetail2View extends StatefulWidget {
   const ProductDetail2View({Key? key}) : super(key: key);
@@ -14,8 +10,16 @@ class ProductDetail2View extends StatefulWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ProductDetail2"),
-        actions: const [],
+        elevation: 0,
+        actions: const [
+          const Icon(
+            Icons.search,
+            size: 24.0,
+          ),
+          const SizedBox(
+            width: 20.0,
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -23,56 +27,17 @@ class ProductDetail2View extends StatefulWidget {
           child: Column(
             children: [
               H3(
-                title: 'Myfiekd Bakery  & Cafe',
+                title: "Mayfield Bakery & Cafe",
               ),
               const SizedBox(
                 height: 14.0,
               ),
-              Row(
-                children: [
-                  Text(
-                    "\$\$",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  DotContainer(),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    "Chinese",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  DotContainer(),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    "American Deshi Food",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  DotContainer(),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    "Deshi Food",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.grey,
-                    ),
-                  ),
+              QCategoryList(
+                items: [
+                  "\$\$",
+                  "Chinese",
+                  "American Deshi food",
+                  "Deshi food",
                 ],
               ),
               const SizedBox(
@@ -89,11 +54,7 @@ class ProductDetail2View extends StatefulWidget {
                   const SizedBox(
                     width: 9.0,
                   ),
-                  Icon(
-                    Icons.star,
-                    size: 24.0,
-                    color: primaryColor,
-                  ),
+                  Icon(Icons.star, size: 24.0, color: primaryColor),
                   const SizedBox(
                     width: 9.0,
                   ),
@@ -114,11 +75,7 @@ class ProductDetail2View extends StatefulWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.monetization_on,
-                        size: 24.0,
-                        color: primaryColor,
-                      ),
+                      Icon(Icons.money, size: 24.0, color: primaryColor),
                       const SizedBox(
                         width: 6.0,
                       ),
@@ -149,11 +106,7 @@ class ProductDetail2View extends StatefulWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.timer_sharp,
-                        size: 24.0,
-                        color: primaryColor,
-                      ),
+                      Icon(Icons.timer, size: 24.0, color: primaryColor),
                       const SizedBox(
                         width: 6.0,
                       ),
@@ -161,14 +114,14 @@ class ProductDetail2View extends StatefulWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Free",
+                            "25",
                             style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            "Delivery",
+                            "Minutes",
                             style: TextStyle(
                               fontSize: 12.0,
                             ),
@@ -179,8 +132,8 @@ class ProductDetail2View extends StatefulWidget {
                   ),
                   Spacer(),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
                         height: 38,
@@ -191,11 +144,14 @@ class ProductDetail2View extends StatefulWidget {
                             side: const BorderSide(
                               color: Colors.green,
                             ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
                           ),
                           onPressed: () {},
                           child: const Text("Take Away"),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ],
@@ -204,7 +160,7 @@ class ProductDetail2View extends StatefulWidget {
                 height: 34.0,
               ),
               H4(
-                title: 'Featured Items',
+                title: "Featured Items",
               ),
               const SizedBox(
                 height: 18.0,
@@ -218,12 +174,12 @@ class ProductDetail2View extends StatefulWidget {
                   clipBehavior: Clip.none,
                   itemBuilder: (context, index) {
                     var item = controller.products[index];
-                    return CardProductDetail1(
+                    return ProductVerticalCard2(
                       image: item['photo'],
                       title: item['product_name'],
-                      subTitle: 'Chineese',
-                      margin: EdgeInsets.only(
-                        right: 10,
+                      subtitle: "Chinese",
+                      margin: const EdgeInsets.only(
+                        right: 10.0,
                       ),
                     );
                   },
@@ -240,7 +196,7 @@ class ProductDetail2View extends StatefulWidget {
                     controller.dataMenu.length,
                     (index) {
                       var item = controller.dataMenu[index];
-                      bool selected = index == 0;
+                      bool selected = index == 1;
 
                       return Container(
                         padding: const EdgeInsets.symmetric(
@@ -250,19 +206,18 @@ class ProductDetail2View extends StatefulWidget {
                         margin: const EdgeInsets.only(right: 10.0),
                         child: InkWell(
                           onTap: () {
-                            controller.selectedItem = item;
+                            controller.selectedIte = item;
                             controller.setState(() {});
                           },
                           child: Center(
                             child: Text(
                               "${item}",
                               style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20.0,
-                                fontWeight: (controller.selectedItem == index)
-                                    ? FontWeight.w600
-                                    : FontWeight.w400,
-                              ),
+                                  color: Colors.black,
+                                  fontSize: 24.0,
+                                  fontWeight: (controller.selectedIte == index)
+                                      ? FontWeight.w600
+                                      : FontWeight.w400),
                             ),
                           ),
                         ),
@@ -275,7 +230,7 @@ class ProductDetail2View extends StatefulWidget {
                 height: 28.0,
               ),
               H5(
-                title: 'Most Polulars',
+                title: "Most Populars",
               ),
               const SizedBox(
                 height: 24.0,
@@ -289,12 +244,11 @@ class ProductDetail2View extends StatefulWidget {
                   clipBehavior: Clip.none,
                   itemBuilder: (context, index) {
                     var item = controller.productPopular[index];
-
-                    return CardDetail2(
+                    return ProductRowCard(
                       image: item['photo'],
                       title: item['product_name'],
                       subTitle:
-                          'Shortbread, choocolate turtle cookies and red velvet.',
+                          "Shortbread, chocolate turtle cookies, and red velvet.",
                       category: item['category'],
                       price: item['price'],
                       margin: const EdgeInsets.only(
@@ -305,7 +259,7 @@ class ProductDetail2View extends StatefulWidget {
                 ),
               ),
               H5(
-                title: 'Sea Foods',
+                title: "Sea Foods",
               ),
               const SizedBox(
                 height: 24.0,
@@ -319,21 +273,20 @@ class ProductDetail2View extends StatefulWidget {
                   clipBehavior: Clip.none,
                   itemBuilder: (context, index) {
                     var item = controller.productSeaFood[index];
-
-                    return CardDetail2(
+                    return ProductRowCard(
                       image: item['photo'],
                       title: item['product_name'],
                       subTitle:
-                          'Shortbread, choocolate turtle cookies and red velvet.',
+                          "Shortbread, chocolate turtle cookies, and red velvet.",
                       category: item['category'],
-                      price: 7.4,
+                      price: 7.5,
                       margin: const EdgeInsets.only(
                         bottom: 10.0,
                       ),
                     );
                   },
                 ),
-              ),
+              )
             ],
           ),
         ),

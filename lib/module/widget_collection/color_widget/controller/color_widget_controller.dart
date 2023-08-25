@@ -20,28 +20,28 @@ class ColorWidgetController extends State<ColorWidgetView>
 
   List<Map> colors = [
     {
-      'color': primaryColor,
-      'label': 'primaryColor',
+      "color": primaryColor,
+      "label": "primaryColor",
     },
     {
-      'color': secondaryColor,
-      'label': 'secondaryColor',
+      "color": secondaryColor,
+      "label": "secondaryColor",
     },
     {
-      'color': dangerColor,
-      'label': 'dangerColor',
+      "color": disabledColor,
+      "label": "disabledColor",
     },
     {
-      'color': successColor,
-      'label': 'successColor',
+      "color": textColor,
+      "label": "textColor",
     },
     {
-      'color': infoColor,
-      'label': 'infoColor',
+      "color": secondaryTextColor,
+      "label": "secondaryTextColor",
     },
     {
-      'color': warningColor,
-      'label': 'warningColor',
-    },
+      "color": scaffoldBackgroundColor,
+      "label": "scaffoldBackgroundColor",
+    }
   ];
 }

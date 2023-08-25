@@ -1,105 +1,102 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/button/action_button.dart';
-import 'package:hyper_ui/shared/widget/button/action_button_with_option.dart';
-import 'package:hyper_ui/shared/widget/button/button.dart';
-import 'package:hyper_ui/shared/widget/button/outilne_button.dart';
-import 'package:hyper_ui/shared/widget/button/outilne_icon_button.dart';
-import 'package:hyper_ui/shared/widget/button/outline_danger_button.dart';
-import 'package:hyper_ui/shared/widget/button/outline_success_button.dart';
-import '../controller/button_widget_controller.dart';
 
 class ButtonWidgetView extends StatefulWidget {
-  const ButtonWidgetView({Key? key}) : super(key: key);
+  ButtonWidgetView({Key? key}) : super(key: key);
 
   Widget build(context, ButtonWidgetController controller) {
     controller.view = this;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ButtonWidget"),
-        actions: const [],
+        title: Text("ButtonWidget"),
+        actions: [],
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                child: QBtutton(
-                  label: 'Save',
-                  onPressed: () {},
+              Text(
+                "text",
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(
-                height: 12.0,
-              ),
-              QOutlineBtutton(
-                label: 'Checkout',
+              "q_button".snippet,
+              //#TEMPLATE q_button
+              QButton(
+                label: "Checkout",
                 onPressed: () {},
               ),
-              const SizedBox(
-                height: 12.0,
-              ),
-              QOutlineIconBtutton(
-                label: 'Cek',
-                onPressed: () {},
-                icon: Icons.card_membership_outlined,
-              ),
-              const SizedBox(
-                height: 12.0,
-              ),
-              QOutlineSuccessBtutton(
-                label: 'Nice',
+              //#END
+              "q_button_outline".snippet,
+              //#TEMPLATE q_button_outline
+              QOutlineButton(
+                label: "Checkout",
                 onPressed: () {},
               ),
-              const SizedBox(
-                height: 12.0,
-              ),
-              QOutlineDangerBtutton(
-                label: 'Danger',
+              //#END
+              "q_button_outline_success".snippet,
+              //#TEMPLATE q_button_outline_success
+              QOutlineSuccessButton(
+                label: "Checkout",
                 onPressed: () {},
               ),
-              const SizedBox(
-                height: 20.0,
+              //#END
+              "q_button_outline_danger".snippet,
+              //#TEMPLATE q_button_outline_danger
+              QOutlineDangerButton(
+                label: "Checkout",
+                onPressed: () {},
               ),
+              //#END
+              "q_button_outline_icon".snippet,
+              //#TEMPLATE q_button_outline_icon
+              QOutlineIconButton(
+                label: "Checkout",
+                icon: Icons.wallet,
+                onPressed: () {},
+              ),
+              //#END
               Padding(
-                padding: EdgeInsets.all(
-                  10,
-                ),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
-                  "Button Button",
+                  "Bottom Button",
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              QActionBtutton(
-                label: 'Checkout',
+              "q_action_button_with_options".snippet,
+              //#TEMPLATE q_action_button_with_options
+              QActionButtonWithOptions(
+                label: "Checkout",
+                icon: Icons.share,
                 onPressed: () {},
-              ),
-              const SizedBox(
-                height: 12.0,
-              ),
-              QActionBtuttonWithOption(
-                label: 'Checkout',
-                onPressed: () {},
-                icon: Icons.share_outlined,
                 onOptionPressed: () {},
               ),
+              //#END
+              "q_action_button".snippet,
+              //#TEMPLATE q_action_button
+              QActionButton(
+                label: "Checkout",
+                onPressed: () {},
+              ),
+              //#END
             ],
           ),
         ),
       ),
-      bottomNavigationBar: QActionBtutton(
-        label: 'Checkout',
+      bottomNavigationBar: QActionButton(
+        label: "Checkout",
         onPressed: () {},
       ),
     );
   }
 
-  @override
   State<ButtonWidgetView> createState() => ButtonWidgetController();
 }

@@ -18,6 +18,7 @@ class Intro1Controller extends State<Intro1View> implements MvcController {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
   int currentIndex = 0;
   final CarouselController carouselController = CarouselController();
 }
